@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="JP Digital AI — modern website design and development by Emmanuel Eboh.">
+<title>JP Digital AI | Website Design & Development</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#07111f;
+  color:#f7f9fc;
+  line-height:1.6
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.wrap{
+  max-width:1050px;
+  margin:auto;
+  padding:0 20px
+}
+
+header{
+  padding:20px 0;
+  border-bottom:1px solid #ffffff18;
+  position:sticky;
+  top:0;
+  background:#07111fee;
+  backdrop-filter:blur(10px);
+  z-index:5
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+.logo{
+  font-size:21px;
+  font-weight:800
+}
+
+.logo span{
+  opacity:.5
+}
+
+.links{
+  display:flex;
+  gap:20px;
+  color:#aeb9ca;
+  font-size:14px
+}
+
+.hero{
+  text-align:center;
+  padding:90px 0 70px
+}
+
+.tag{
+  display:inline-block;
+  border:1px solid #ffffff20;
+  border-radius:30px;
+  padding:7px 12px;
+  color:#b9c4d4;
+  font-size:12px
+}
+
+h1{
+  font-size:clamp(42px,8vw,76px);
+  line-height:1.03;
+  letter-spacing:-3px;
+  max-width:850px;
+  margin:20px auto
+}
+
+.hero p{
+  max-width:650px;
+  margin:0 auto;
+  color:#aeb9ca;
+  font-size:18px
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:28px
+}
+
+.btn{
+  padding:13px 20px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:14px;
+  border:1px solid #ffffff20;
+  cursor:pointer
+}
+
+.primary{
+  background:#fff;
+  color:#07111f
+}
+
+.secondary{
+  background:#ffffff09
+}
+
+section{
+  padding:60px 0
+}
+
+.title{
+  text-align:center;
+  font-size:32px;
+  margin:0 0 10px
+}
+
+.sub{
+  text-align:center;
+  color:#9eabbc;
+  max-width:620px;
+  margin:0 auto 32px
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px
+}
+
+.card{
+  padding:25px;
+  border:1px solid #ffffff12;
+  background:#ffffff08;
+  border-radius:18px
+}
+
+.card h3{
+  margin:0 0 8px
+}
+
+.card p{
+  color:#9eabbc;
+  font-size:14px
+}
+
+.contact{
+  text-align:center;
+  border:1px solid #ffffff15;
+  border-radius:24px;
+  padding:42px 20px;
+  background:#ffffff08
+}
+
+footer{
+  text-align:center;
+  padding:35px;
+  color:#7f8b9d;
+  font-size:13px
+}
+
+/* AI CHAT */
+
+#chat{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  width:min(390px,calc(100vw - 28px));
+  height:590px;
+  background:#101c2d;
+  border:1px solid #ffffff22;
+  border-radius:22px;
+  box-shadow:0 25px 70px #0008;
+  display:none;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:20
+}
+
+.chathead{
+  padding:16px;
+  background:#15243a;
+  border-bottom:1px solid #ffffff12;
+  display:flex;
+  justify-content:space-between
+}
+
+.chatname{
+  font-weight:800
+}
+
+.status{
+  font-size:11px;
+  color:#8e9caf
+}
+
+.close{
+  border:0;
+  background:none;
+  color:white;
+  font-size:24px;
+  cursor:pointer
+}
+
+#messages{
+  flex:1;
+  overflow:auto;
+  padding:16px
+}
+
+.msg{
+  max-width:86%;
+  padding:11px 13px;
+  border-radius:15px;
+  margin:8px 0;
+  white-space:pre-wrap;
+  font-size:14px
+}
+
+.user{
+  margin-left:auto;
+  background:#fff;
+  color:#07111f
+}
+
+.bot{
+  background:#1d2b40
+}
+
+.typing{
+  opacity:.6
+}
+
+.chatinput{
+  display:flex;
+  gap:8px;
+  padding:12px;
+  background:#15243a;
+  border-top:1px solid #ffffff12
+}
+
+textarea{
+  flex:1;
+  resize:none;
+  min-height:44px;
+  max-height:110px;
+  border:1px solid #ffffff18;
+  border-radius:12px;
+  background:#0c1727;
+  color:white;
+  padding:11px;
+  outline:none
+}
+
+#send{
+  width:48px;
+  border:0;
+  border-radius:12px;
+  background:#fff;
+  color:#07111f;
+  font-weight:800;
+  cursor:pointer
+}
+
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  border:0;
+  background:#fff;
+  color:#07111f;
+  padding:14px 18px;
+  border-radius:999px;
+  font-weight:800;
+  cursor:pointer;
+  z-index:10
+}
+
+@media(max-width:750px){
+
+  .links{
+    display:none
+  }
+
+  .cards{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    padding-top:65px
+  }
+
+  .hero p{
+    font-size:16px
+  }
+
+  #chat{
+    height:72vh
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="wrap">
+
+<nav>
+
+<div class="logo">
+JP Digital AI <span>/ Studio</span>
+</div>
+
+<div class="links">
+
+<a href="#work">
+What I Do
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a
+href="https://saas-web-portfolio-1r1h.vercel.app/#contact"
+target="_blank">
+Portfolio
+</a>
+
+</div>
+
+</nav>
+
+</div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+<div class="wrap">
+
+<div class="tag">
+WEBSITE DESIGN & DEVELOPMENT
+</div>
+
+<h1>
+Modern websites built to make your business look exceptional.
+</h1>
+
+<p>
+I’m Emmanuel Eboh, a website designer and developer based in Delta State, Nigeria. I build modern SaaS-style business websites designed to look professional and help businesses grow online.
+</p>
+
+<div class="buttons">
+
+<button
+class="btn primary"
+onclick="openChat()">
+Ask JP AI
+</button>
+
+<a
+class="btn secondary"
+href="https://wa.me/2349030123407"
+target="_blank">
+WhatsApp Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="work">
+
+<div class="wrap">
+
+<h2 class="title">
+What I do
+</h2>
+
+<p class="sub">
+A clean, modern website experience for businesses that want a stronger online presence.
+</p>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+Modern Websites
+</h3>
+
+<p>
+Professional business websites with a clean, modern look and clear user experience.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+SaaS-Style Design
+</h3>
+
+<p>
+Modern layouts inspired by high-quality SaaS products, built around your business.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+AI-Ready
+</h3>
+
+<p>
+Web experiences can be connected to useful AI tools and assistants.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="wrap">
+
+<div class="contact">
+
+<h2 class="title">
+Have a website idea?
+</h2>
+
+<p class="sub">
+Tell me what you want to build. Pricing is custom because every project can be different.
+</p>
+
+<div class="buttons">
+
+<a
+class="btn primary"
+href="mailto:jpdigitalai@gmail.com">
+Email Emmanuel
+</a>
+
+<a
+class="btn secondary"
+href="https://wa.me/2349030123407"
+target="_blank">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+© <span id="year"></span>
+JP Digital AI · Delta State, Nigeria
+
+</footer>
+
+
+<button
+class="floating"
+id="chatBtn"
+onclick="openChat()">
+
+✦ Ask JP AI
+
+</button>
+
+
+<!-- AI CHAT -->
+
+<div id="chat">
+
+<div class="chathead">
+
+<div>
+
+<div class="chatname">
+JP AI Receptionist
+</div>
+
+<div class="status">
+Online · Emmanuel's assistant
+</div>
+
+</div>
+
+<button
+class="close"
+onclick="closeChat()">
+
+×
+
+</button>
+
+</div>
+
+
+<div id="messages">
+
+<div class="msg bot">
+
+Hi! 👋 I’m JP AI Receptionist. Ask me anything about Emmanuel or his website services. You can also just say hello.
+
+</div>
+
+</div>
+
+
+<div class="chatinput">
+
+<textarea
+id="input"
+placeholder="Type your message...">
+</textarea>
+
+<button
+id="send"
+onclick="sendMessage()">
+
+➤
+
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* YOUR CLOUDFLARE AI WORKER */
+
+const WORKER_URL =
+"https://jpaireceptionist.emmanueleboh219.workers.dev/";
+
+
+/* CHAT MEMORY */
+
+const history = [];
+
+
+/* OPEN CHAT */
+
+function openChat(){
+
+  document.getElementById("chat").style.display="flex";
+
+  document.getElementById("chatBtn").style.display="none";
+
+  document.getElementById("input").focus();
+
+}
+
+
+/* CLOSE CHAT */
+
+function closeChat(){
+
+  document.getElementById("chat").style.display="none";
+
+  document.getElementById("chatBtn").style.display="block";
+
+}
+
+
+/* ADD MESSAGE */
+
+function addMessage(text,type,extra=""){
+
+  const box =
+  document.getElementById("messages");
+
+  const div =
+  document.createElement("div");
+
+  div.className =
+  "msg "+type+" "+extra;
+
+  div.textContent = text;
+
+  box.appendChild(div);
+
+  box.scrollTop =
+  box.scrollHeight;
+
+  return div;
+
+}
+
+
+/* SEND MESSAGE TO CLOUDFLARE */
+
+async function sendMessage(){
+
+  const input =
+  document.getElementById("input");
+
+  const text =
+  input.value.trim();
+
+  if(!text) return;
+
+
+  input.value="";
+
+
+  /* SHOW USER MESSAGE */
+
+  addMessage(
+    text,
+    "user"
+  );
+
+
+  /* SHOW THINKING */
+
+  const typing =
+  addMessage(
+    "Thinking…",
+    "bot",
+    "typing"
+  );
+
+
+  document.getElementById("send").disabled=true;
+
+
+  try{
+
+    const response =
+    await fetch(
+      WORKER_URL,
+      {
+        method:"POST",
+
+        headers:{
+          "Content-Type":
+          "application/json"
+        },
+
+        body:JSON.stringify({
+
+          message:text,
+
+          history:
+          history.slice(-12)
+
+        })
+
+      }
+    );
+
+
+    const data =
+    await response.json();
+
+
+    typing.remove();
+
+
+    if(
+      !response.ok ||
+      !data.reply
+    ){
+
+      throw new Error(
+        data.message ||
+        data.error ||
+        "Request failed"
+      );
+
+    }
+
+
+    /* SHOW AI RESPONSE */
+
+    addMessage(
+      data.reply,
+      "bot"
+    );
+
+
+    /* SAVE CHAT HISTORY */
+
+    history.push(
+      {
+        role:"user",
+        content:text
+      },
+
+      {
+        role:"assistant",
+        content:data.reply
+      }
+    );
+
+
+  }catch(error){
+
+    typing.remove();
+
+
+    addMessage(
+      "Sorry, I couldn't connect right now. Please contact Emmanuel on WhatsApp or email.",
+      "bot"
+    );
+
+
+    console.error(error);
+
+  }finally{
+
+    document.getElementById("send").disabled=false;
+
+    input.focus();
+
+  }
+
+}
+
+
+/* ENTER TO SEND */
+
+document
+.getElementById("input")
+.addEventListener(
+  "keydown",
+  function(e){
+
+    if(
+      e.key==="Enter" &&
+      !e.shiftKey
+    ){
+
+      e.preventDefault();
+
+      sendMessage();
+
+    }
+
+  }
+);
+
+
+/* CURRENT YEAR */
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+  </html>

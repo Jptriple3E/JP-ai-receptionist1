@@ -1,729 +1,1689 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JP Digital AI | AI Tools, Websites & Business Automation</title>
 
-<meta name="description" content="JP Digital AI by Emmanuel Eboh. Modern website design, development, and AI-powered business solutions.">
+  <meta
+    name="description"
+    content="Discover JP Digital AI: AI-powered business tools, website design, website analysis, intelligent customer support, and business automation."
+  >
 
-<meta name="google-adsense-account" content="ca-pub-6655109120413498">
+  <meta name="robots" content="index, follow">
 
-<title>JP Digital AI | Website Design & Development</title>
+  <meta name="theme-color" content="#07111f">
 
-<style>
-*{box-sizing:border-box}
+  <meta
+    name="google-adsense-account"
+    content="ca-pub-6655109120413498"
+  >
 
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#07111f;
-  color:#f7f9fc;
-  line-height:1.6
-}
+  <meta property="og:type" content="website">
 
-a{
-  text-decoration:none;
-  color:inherit
-}
+  <meta
+    property="og:title"
+    content="JP Digital AI | Smarter Tools for Business Growth"
+  >
 
-.wrap{
-  max-width:1050px;
-  margin:auto;
-  padding:0 20px
-}
+  <meta
+    property="og:description"
+    content="Explore AI business tools, professional websites, and intelligent customer support."
+  >
 
-header{
-  padding:20px 0;
-  border-bottom:1px solid #ffffff18;
-  position:sticky;
-  top:0;
-  background:#07111fee;
-  backdrop-filter:blur(10px);
-  z-index:5
-}
+  <meta
+    property="og:url"
+    content="https://jp-ai-receptionist1.vercel.app/"
+  >
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center
-}
+  <link
+    rel="canonical"
+    href="https://jp-ai-receptionist1.vercel.app/"
+  >
 
-.logo{
-  font-size:21px;
-  font-weight:800
-}
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: #101d30;
+      --panel-light: #14243a;
+      --text: #f7f9fc;
+      --muted: #a8b5c8;
+      --border: rgba(255,255,255,.12);
+      --accent: #8bd5ff;
+      --green: #b7f7d4;
+      --radius: 20px;
+    }
 
-.logo span{
-  opacity:.5
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.links{
-  display:flex;
-  gap:20px;
-  color:#aeb9ca;
-  font-size:14px
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-.hero{
-  text-align:center;
-  padding:90px 0 70px
-}
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
 
-.tag{
-  display:inline-block;
-  border:1px solid #ffffff20;
-  border-radius:30px;
-  padding:7px 12px;
-  color:#b9c4d4;
-  font-size:12px
-}
+    body, button, input, textarea {
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-h1{
-  font-size:clamp(42px,8vw,76px);
-  line-height:1.03;
-  letter-spacing:-3px;
-  max-width:850px;
-  margin:20px auto
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero p{
-  max-width:650px;
-  margin:0 auto;
-  color:#aeb9ca;
-  font-size:18px
-}
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:28px
-}
+    button {
+      font: inherit;
+    }
 
-.btn{
-  display:inline-block;
-  padding:13px 20px;
-  border-radius:12px;
-  font-weight:700;
-  font-size:14px;
-  border:1px solid #ffffff20;
-  cursor:pointer
-}
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
 
-.primary{
-  background:#fff;
-  color:#07111f
-}
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
 
-.secondary{
-  background:#ffffff09
-}
+    .announcement {
+      text-align: center;
+      padding: 9px 16px;
+      background: #10243a;
+      color: #d9e8f8;
+      font-size: 12px;
+    }
 
-section{
-  padding:60px 0
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(7,17,31,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
 
-.title{
-  text-align:center;
-  font-size:32px;
-  margin:0 0 10px
-}
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-.sub{
-  text-align:center;
-  color:#9eabbc;
-  max-width:620px;
-  margin:0 auto 32px
-}
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -.7px;
+      white-space: nowrap;
+    }
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px
-}
+    .logo span {
+      color: var(--accent);
+    }
 
-.card{
-  padding:25px;
-  border:1px solid #ffffff12;
-  background:#ffffff08;
-  border-radius:18px
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 13px;
+      color: var(--muted);
+    }
 
-.card h3{
-  margin:0 0 8px
-}
+    .nav-links a:hover,
+    footer a:hover {
+      color: var(--accent);
+    }
 
-.card p{
-  color:#9eabbc;
-  font-size:14px
-}
+    .nav-cta {
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text) !important;
+    }
 
-.contact{
-  text-align:center;
-  border:1px solid #ffffff15;
-  border-radius:24px;
-  padding:42px 20px;
-  background:#ffffff08
-}
+    .hero {
+      padding: 100px 0 90px;
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(61,139,201,.15),
+          transparent 60%
+        );
+    }
 
-footer{
-  text-align:center;
-  padding:35px;
-  color:#7f8b9d;
-  font-size:13px
-}
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-/* AI CHAT */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.035);
+      color: #d5e1ef;
+      font-size: 12px;
+    }
 
-#chat{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  width:min(390px,calc(100vw - 28px));
-  height:590px;
-  background:#101c2d;
-  border:1px solid #ffffff22;
-  border-radius:22px;
-  box-shadow:0 25px 70px #0008;
-  display:none;
-  flex-direction:column;
-  overflow:hidden;
-  z-index:20
-}
+    .dot {
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      background: var(--green);
+      border-radius: 50%;
+    }
 
-.chathead{
-  padding:16px;
-  background:#15243a;
-  border-bottom:1px solid #ffffff12;
-  display:flex;
-  justify-content:space-between
-}
+    h1 {
+      max-width: 900px;
+      margin: 24px auto;
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.06;
+      letter-spacing: -3.5px;
+    }
 
-.chatname{
-  font-weight:800
-}
+    .gradient {
+      background: linear-gradient(90deg, #fff, #8bd5ff, #b7f7d4);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-.status{
-  font-size:11px;
-  color:#8e9caf
-}
+    .hero-copy {
+      max-width: 680px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 17px;
+    }
 
-.close{
-  border:0;
-  background:none;
-  color:white;
-  font-size:24px;
-  cursor:pointer
-}
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 30px;
+    }
 
-#messages{
-  flex:1;
-  overflow:auto;
-  padding:16px
-}
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 19px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
 
-.msg{
-  max-width:86%;
-  padding:11px 13px;
-  border-radius:15px;
-  margin:8px 0;
-  white-space:pre-wrap;
-  overflow-wrap:anywhere;
-  font-size:14px
-}
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-.user{
-  margin-left:auto;
-  background:#fff;
-  color:#07111f
-}
+    .btn-primary {
+      background: white;
+      color: #07111f;
+      border-color: white;
+    }
 
-.bot{
-  background:#1d2b40
-}
+    .btn-secondary {
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+    }
 
-.typing{
-  opacity:.6
-}
+    .hero-note {
+      margin-top: 25px;
+      color: #8595aa;
+      font-size: 12px;
+    }
 
-.chatinput{
-  display:flex;
-  gap:8px;
-  padding:12px;
-  background:#15243a;
-  border-top:1px solid #ffffff12
-}
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.025);
+      text-align: center;
+    }
 
-textarea{
-  flex:1;
-  resize:none;
-  min-height:44px;
-  max-height:110px;
-  border:1px solid #ffffff18;
-  border-radius:12px;
-  background:#0c1727;
-  color:white;
-  padding:11px;
-  outline:none
-}
+    .trust-strip strong {
+      display: block;
+      font-size: 14px;
+    }
 
-#send{
-  width:48px;
-  border:0;
-  border-radius:12px;
-  background:#fff;
-  color:#07111f;
-  font-weight:800;
-  cursor:pointer
-}
+    .trust-strip span {
+      color: var(--muted);
+      font-size: 12px;
+    }
 
-#send:disabled{
-  opacity:.5;
-  cursor:wait
-}
+    section {
+      padding: 76px 0;
+    }
 
-.floating{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  border:0;
-  background:#fff;
-  color:#07111f;
-  padding:14px 18px;
-  border-radius:999px;
-  font-weight:800;
-  cursor:pointer;
-  z-index:10
-}
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
 
-@media(max-width:750px){
+    h2 {
+      margin: 12px 0;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.2;
+      letter-spacing: -1.2px;
+    }
 
-  .links{
-    display:none
+    .section-heading p,
+    .section-copy {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.045),
+          rgba(255,255,255,.012)
+        );
+    }
+
+    .card:hover {
+      border-color: rgba(139,213,255,.38);
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(139,213,255,.1);
+      font-size: 23px;
+    }
+
+    .card-label {
+      margin-top: 22px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    .card h3 {
+      margin: 9px 0 5px;
+      font-size: 21px;
+      line-height: 1.35;
+    }
+
+    .card p {
+      margin: 8px 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .status-label {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 7px;
+      background: rgba(255,255,255,.06);
+      color: #b7c5d8;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .split h2 {
+      font-size: clamp(30px, 5vw, 45px);
+    }
+
+    .split p {
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 25px 0;
+    }
+
+    .check-list li {
+      margin: 13px 0;
+      color: #d5e0ef;
+      font-size: 14px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      margin-right: 10px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .showcase {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+
+    .showcase-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .showcase-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .showcase-row:last-child {
+      border-bottom: 0;
+    }
+
+    .showcase-row span:last-child {
+      color: var(--green);
+      text-align: right;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .price-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel);
+    }
+
+    .price-card h3 {
+      font-size: 22px;
+    }
+
+    .price {
+      margin: 12px 0;
+      font-size: 37px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .price-card p,
+    .price-card li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .price-card ul {
+      padding-left: 20px;
+      margin: 22px 0;
+    }
+
+    .price-card li {
+      margin: 10px 0;
+    }
+
+    .price-card .btn {
+      width: 100%;
+    }
+
+    .notice {
+      margin-top: 22px;
+      color: #8292a8;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .contact-box {
+      padding: 48px 24px;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(65,139,199,.13),
+          transparent 65%
+        ),
+        var(--panel);
+      text-align: center;
+    }
+
+    .contact-box p {
+      max-width: 620px;
+      margin: 15px auto;
+      color: var(--muted);
+    }
+
+    .email {
+      overflow-wrap: anywhere;
+    }
+
+    .faq {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    details {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      color: #8492a6;
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
+
+    /* AI RECEPTIONIST CHAT */
+
+    #chat {
+      position: fixed;
+      right: 18px;
+      bottom: 85px;
+      width: min(390px, calc(100vw - 28px));
+      height: 590px;
+      max-height: calc(100dvh - 115px);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      background: #101c2d;
+      border: 1px solid #ffffff22;
+      border-radius: 22px;
+      box-shadow: 0 25px 70px #0008;
+      z-index: 30;
+    }
+
+    .chathead {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px;
+      background: #15243a;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chatname {
+      font-weight: 800;
+    }
+
+    .chatstatus {
+      color: #a4b5ca;
+      font-size: 11px;
+    }
+
+    .close {
+      align-self: flex-start;
+      border: 0;
+      background: none;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    #messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .msg {
+      max-width: 88%;
+      margin: 8px 0;
+      padding: 11px 13px;
+      border-radius: 15px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-size: 14px;
+    }
+
+    .user {
+      margin-left: auto;
+      background: white;
+      color: #07111f;
+    }
+
+    .bot {
+      background: #1d2b40;
+      color: white;
+    }
+
+    .typing {
+      opacity: .65;
+    }
+
+    .chatinput {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      background: #15243a;
+      border-top: 1px solid var(--border);
+    }
+
+    #input {
+      flex: 1;
+      min-width: 0;
+      min-height: 44px;
+      max-height: 110px;
+      resize: none;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #0c1727;
+      color: white;
+      padding: 11px;
+      outline: none;
+    }
+
+    #send {
+      width: 48px;
+      flex-shrink: 0;
+      border: 0;
+      border-radius: 12px;
+      background: white;
+      color: #07111f;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    #send:disabled {
+      opacity: .5;
+      cursor: wait;
+    }
+
+    .floating {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 31;
+      border: 1px solid #ffffff30;
+      background: white;
+      color: #07111f;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      box-shadow: 0 8px 30px #0005;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links .optional {
+        display: none;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .container {
+        width: calc(100% - 30px);
+      }
+
+      nav {
+        min-height: 67px;
+      }
+
+      .logo {
+        font-size: 17px;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 12px;
+      }
+
+      .nav-cta {
+        padding: 8px 10px;
+      }
+
+      .hero {
+        padding: 72px 0 55px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-copy {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .grid,
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card {
+        padding: 23px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      #chat {
+        right: 10px;
+        bottom: 75px;
+        width: calc(100vw - 20px);
+        height: 75dvh;
+        max-height: 650px;
+      }
+
+      .floating {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "JP Digital AI",
+    "url": "https://jp-ai-receptionist1.vercel.app/",
+    "email": "jpdigitalai@gmail.com",
+    "description": "AI-powered business tools, website design, and digital business solutions."
   }
-
-  .cards{
-    grid-template-columns:1fr
-  }
-
-  .hero{
-    padding-top:65px
-  }
-
-  .hero p{
-    font-size:16px
-  }
-
-  #chat{
-    height:72vh;
-    height:72dvh;
-    max-height:650px
-  }
-
-  h1{
-    letter-spacing:-2px
-  }
-}
-</style>
-
+  </script>
 </head>
 
 <body>
 
-<header>
-<div class="wrap">
+  <div class="announcement">
+    Practical AI tools and digital solutions for modern businesses.
+  </div>
+
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+
+        <a class="logo" href="#home">
+          JP Digital <span>AI</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#tools">Tools</a>
+          <a href="#pricing">Pricing</a>
+          <a class="optional" href="#about">About</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
 
-<nav>
+  <main>
 
-<div class="logo">
-JP Digital AI <span>/ Studio</span>
-</div>
+    <!-- HERO -->
 
-<div class="links">
+    <section class="hero" id="home">
+      <div class="container">
+
+        <div class="badge">
+          <span class="dot"></span>
+          AI TOOLS FOR BUSINESS GROWTH
+        </div>
+
+        <h1>
+          Build smarter.
+          <br>
+          <span class="gradient">Grow your business.</span>
+        </h1>
 
-<a href="#work">What I Do</a>
+        <p class="hero-copy">
+          Discover practical AI tools, improve your website, support your
+          customers, and explore smarter ways to grow your business online.
+          Everything starts with one simple step.
+        </p>
 
-<a href="#contact">Contact</a>
+        <div class="actions">
+          <a class="btn btn-primary" href="#tools">
+            Explore AI Tools →
+          </a>
 
-<a
-href="https://saas-web-portfolio-1r1h.vercel.app/#contact"
-target="_blank"
-rel="noopener noreferrer">
-Portfolio
-</a>
+          <button
+            class="btn btn-secondary"
+            type="button"
+            onclick="openChat()"
+          >
+            ✦ Talk to JP AI
+          </button>
+        </div>
 
-</div>
+        <p class="hero-note">
+          For entrepreneurs, freelancers, creators, and businesses worldwide.
+        </p>
 
-</nav>
+      </div>
+    </section>
 
-</div>
-</header>
+    <div class="container">
+      <div class="trust-strip">
 
-<main>
+        <div>
+          <strong>Free Resources</strong>
+          <span>Start without paying</span>
+        </div>
 
-<section class="hero">
+        <div>
+          <strong>AI-Powered Assistance</strong>
+          <span>Explore smarter workflows</span>
+        </div>
 
-<div class="wrap">
+        <div>
+          <strong>Mobile-Friendly</strong>
+          <span>Designed for everyday use</span>
+        </div>
 
-<div class="tag">
-WEBSITE DESIGN & DEVELOPMENT
-</div>
+      </div>
+    </div>
 
-<h1>
-Modern websites built to make your business look exceptional.
-</h1>
+    <!-- PLATFORM TOOLS -->
 
-<p>
-I'm Emmanuel Eboh, a website designer and developer based in Delta State, Nigeria. I build modern SaaS-style business websites designed to look professional and help businesses grow online.
-</p>
+    <section id="tools">
+      <div class="container">
 
-<div class="buttons">
+        <div class="section-heading">
+          <span class="eyebrow">THE PLATFORM</span>
 
-<button
-class="btn primary"
-onclick="openChat()">
-Ask JP AI
-</button>
+          <h2>Tools to help your business move forward</h2>
 
-<a
-class="btn secondary"
-href="https://wa.me/2349030123407"
-target="_blank"
-rel="noopener noreferrer">
-WhatsApp Me
-</a>
+          <p>
+            Explore our services and discover how AI and modern web
+            technology can help you work more effectively.
+          </p>
+        </div>
 
-</div>
+        <div class="grid">
 
-</div>
+          <article class="card" id="scanner">
+            <div class="icon" aria-hidden="true">🔍</div>
 
-</section>
+            <div class="card-label">FREE TOOL</div>
 
-<section id="work">
+            <h3>JP Business Scanner</h3>
 
-<div class="wrap">
+            <p>
+              Find potential website problems involving SEO, mobile
+              usability, trust, contact options, and customer conversion.
+            </p>
 
-<h2 class="title">
-What I Do
-</h2>
+            <span class="status-label">Scanner development planned</span>
 
-<p class="sub">
-A clean, modern website experience for businesses that want a stronger online presence.
-</p>
+            <div style="height:16px"></div>
 
-<div class="cards">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="askAbout('Tell me about the JP Business Scanner and how website analysis will work.')"
+            >
+              Learn About the Scanner →
+            </button>
+          </article>
 
-<div class="card">
+          <article class="card" id="builder">
+            <div class="icon" aria-hidden="true">🌐</div>
 
-<h3>Modern Websites</h3>
+            <div class="card-label">AI WEBSITE CREATION</div>
 
-<p>
-Professional business websites with a clean, modern look and clear user experience.
-</p>
+            <h3>AI Website Builder</h3>
 
-</div>
+            <p>
+              Plan a professional business website, create a preview,
+              improve the design, and prepare it for publishing.
+            </p>
 
-<div class="card">
+            <span class="status-label">Builder development planned</span>
 
-<h3>SaaS-Style Design</h3>
+            <div style="height:16px"></div>
 
-<p>
-Modern layouts inspired by high-quality SaaS products, built around your business.
-</p>
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="askAbout('Tell me how the JP Digital AI Website Builder is planned to work.')"
+            >
+              Explore Website Building →
+            </button>
+          </article>
 
-</div>
+          <article class="card" id="receptionist">
+            <div class="icon" aria-hidden="true">🤖</div>
 
-<div class="card">
+            <div class="card-label">AI CUSTOMER SUPPORT</div>
 
-<h3>AI-Ready Solutions</h3>
+            <h3>JP AI Receptionist</h3>
 
-<p>
-Web experiences that can be connected to useful AI tools and intelligent assistants.
-</p>
+            <p>
+              Chat with our AI assistant and explore how AI can answer
+              customer questions and support business inquiries.
+            </p>
 
-</div>
+            <span class="status-label">Website chat available</span>
 
-</div>
+            <div style="height:16px"></div>
 
-</div>
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="openChat()"
+            >
+              Try JP AI Receptionist →
+            </button>
+          </article>
 
-</section>
+          <article class="card" id="automation">
+            <div class="icon" aria-hidden="true">💬</div>
 
-<section id="contact">
+            <div class="card-label">BUSINESS AUTOMATION</div>
 
-<div class="wrap">
+            <h3>WhatsApp & Voice AI</h3>
 
-<div class="contact">
+            <p>
+              Explore customer messaging, voice experiences, and
+              automated responses for business workflows.
+            </p>
 
-<h2 class="title">
-Have a Website Idea?
-</h2>
+            <span class="status-label">Additional integration planned</span>
 
-<p class="sub">
-Tell me what you want to build. Pricing is custom because every project can be different.
-</p>
+            <div style="height:16px"></div>
 
-<div class="buttons">
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/2349030123407"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Us on WhatsApp →
+            </a>
+          </article>
 
-<a
-class="btn primary"
-href="mailto:jpdigitalai@gmail.com">
-Email Emmanuel
-</a>
+          <article class="card" id="learning">
+            <div class="icon" aria-hidden="true">📚</div>
 
-<a
-class="btn secondary"
-href="https://wa.me/2349030123407"
-target="_blank"
-rel="noopener noreferrer">
-WhatsApp
-</a>
+            <div class="card-label">FREE KNOWLEDGE</div>
 
-</div>
+            <h3>Business Learning Centre</h3>
 
-</div>
+            <p>
+              Learn about website design, online visibility, AI tools,
+              digital skills, and ways to improve your online business.
+            </p>
 
-</div>
+            <span class="status-label">Learning centre planned</span>
 
-</section>
+            <div style="height:16px"></div>
 
-</main>
+            <a class="btn btn-secondary" href="#about">
+              Discover Our Mission →
+            </a>
+          </article>
 
-<footer>
+          <article class="card" id="web-design">
+            <div class="icon" aria-hidden="true">🛠️</div>
 
-© <span id="year"></span>
-JP Digital AI · Delta State, Nigeria
+            <div class="card-label">CUSTOM SERVICES</div>
 
-</footer>
+            <h3>Professional Website Design</h3>
 
-<button
-class="floating"
-id="chatBtn"
-onclick="openChat()">
+            <p>
+              Get a modern, responsive business website designed
+              around your brand, services, and customers.
+            </p>
 
-✦ Ask JP AI
+            <div style="height:16px"></div>
 
-</button>
+            <a class="btn btn-secondary" href="#contact">
+              Discuss Your Website →
+            </a>
+          </article>
 
-<!-- AI CHAT -->
+        </div>
 
-<div id="chat">
+      </div>
+    </section>
 
-<div class="chathead">
+    <!-- WHY THE PLATFORM -->
 
-<div>
+    <section id="about">
+      <div class="container">
 
-<div class="chatname">
-JP AI Receptionist
-</div>
+        <div class="split">
 
-<div class="status">
-Online · Emmanuel's assistant
-</div>
+          <div>
+            <span class="eyebrow">OUR MISSION</span>
 
-</div>
+            <h2>
+              Make useful AI technology easier to access.
+            </h2>
 
-<button
-class="close"
-onclick="closeChat()"
-aria-label="Close chat">
+            <p>
+              JP Digital AI is being developed to bring website services,
+              intelligent customer support, and practical business tools
+              together in one place.
+            </p>
 
-×
-</button>
+            <ul class="check-list">
+              <li>Useful tools for real business problems</li>
+              <li>Simple experiences for mobile and desktop</li>
+              <li>Modern websites designed around customers</li>
+              <li>AI solutions developed with practical uses in mind</li>
+            </ul>
 
-</div>
+            <a class="btn btn-primary" href="#contact">
+              Work With JP Digital AI →
+            </a>
+          </div>
 
-<div id="messages" aria-live="polite">
+          <div class="showcase">
 
-<div class="msg bot">
-Hi! 👋 I'm JP AI Receptionist. Ask me anything about Emmanuel or his website services. You can also just say hello.
-</div>
+            <div class="showcase-top">
+              <strong>JP Digital AI</strong>
+              <span class="status-label">PLATFORM OVERVIEW</span>
+            </div>
 
-</div>
+            <div class="showcase-row">
+              <span>AI Website Assistance</span>
+              <span>Available</span>
+            </div>
 
-<div class="chatinput">
+            <div class="showcase-row">
+              <span>Business Website Design</span>
+              <span>Contact Us</span>
+            </div>
 
-<textarea
-id="input"
-aria-label="Your message"
-placeholder="Type your message..."></textarea>
+            <div class="showcase-row">
+              <span>Free Business Scanner</span>
+              <span>Planned</span>
+            </div>
 
-<button
-id="send"
-onclick="sendMessage()"
-aria-label="Send message">
+            <div class="showcase-row">
+              <span>AI Website Builder</span>
+              <span>Planned</span>
+            </div>
 
-➤
+            <div class="showcase-row">
+              <span>Business Automation</span>
+              <span>In Development</span>
+            </div>
 
-</button>
+          </div>
 
-</div>
+        </div>
 
-</div>
+      </div>
+    </section>
 
-<script>
+    <!-- PRICING -->
 
-/* YOUR CLOUDFLARE AI WORKER */
+    <section id="pricing">
+      <div class="container">
 
-const WORKER_URL =
-"https://jpaireceptionist.emmanueleboh219.workers.dev/";
+        <div class="section-heading">
+          <span class="eyebrow">SIMPLE SERVICE PLANS</span>
 
-/* CHAT MEMORY */
+          <h2>Choose the solution for your business</h2>
 
-const history = [];
+          <p>
+            Our planned pricing is designed to make it easier to
+            understand the available services before getting started.
+          </p>
+        </div>
 
-/* OPEN CHAT */
+        <div class="price-grid">
 
-function openChat(){
+          <article class="price-card">
+            <span class="status-label">PLANNED FREE TOOL</span>
 
-  document.getElementById("chat").style.display = "flex";
+            <h3>Business Scanner</h3>
 
-  document.getElementById("chatBtn").style.display = "none";
+            <div class="price">Free</div>
 
-  document.getElementById("input").focus();
+            <p>
+              A planned website analysis tool for identifying
+              opportunities to improve an online presence.
+            </p>
 
-}
+            <ul>
+              <li>Website analysis</li>
+              <li>SEO and usability checks</li>
+              <li>Actionable recommendations</li>
+            </ul>
 
-/* CLOSE CHAT */
+            <a class="btn btn-secondary" href="#scanner">
+              View Scanner Information
+            </a>
+          </article>
 
-function closeChat(){
+          <article class="price-card">
+            <span class="status-label">PLANNED SERVICE</span>
 
-  document.getElementById("chat").style.display = "none";
+            <h3>AI Receptionist</h3>
 
-  document.getElementById("chatBtn").style.display = "block";
+            <div class="price">$200</div>
 
-}
+            <p>
+              Planned one-time activation price following a
+              seven-day free trial.
+            </p>
 
-/* ADD MESSAGE */
+            <ul>
+              <li>Seven-day trial plan</li>
+              <li>AI customer conversations</li>
+              <li>Business inquiry assistance</li>
+            </ul>
 
-function addMessage(text, type, extra = ""){
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="askAbout('Explain the planned JP AI Receptionist seven-day trial and one-time $200 activation price.')"
+            >
+              Ask About the Receptionist
+            </button>
+          </article>
 
-  const box = document.getElementById("messages");
+          <article class="price-card">
+            <span class="status-label">PLANNED SERVICE</span>
 
-  const div = document.createElement("div");
+            <h3>AI Website Builder</h3>
 
-  div.className = "msg " + type + " " + extra;
+            <div class="price">$500</div>
 
-  div.textContent = text;
+            <p>
+              Planned one-time unlock price for the completed
+              website-building service.
+            </p>
 
-  box.appendChild(div);
+            <ul>
+              <li>Free website generation preview</li>
+              <li>Opportunity to request corrections</li>
+              <li>Planned paid website extraction</li>
+            </ul>
 
-  box.scrollTop = box.scrollHeight;
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="askAbout('Explain the planned JP Digital AI Website Builder, its free preview, and its one-time $500 unlock price.')"
+            >
+              Ask About Website Building
+            </button>
+          </article>
 
-  return div;
+          <article class="price-card">
+            <span class="status-label">CUSTOM PROJECTS</span>
 
-}
+            <h3>Website Design Services</h3>
 
-/* SEND MESSAGE TO CLOUDFLARE */
+            <div class="price">Custom</div>
 
-async function sendMessage(){
+            <p>
+              Professional website projects priced according to
+              your needs, scope, and required features.
+            </p>
 
-  const input = document.getElementById("input");
+            <ul>
+              <li>Business websites</li>
+              <li>Responsive web design</li>
+              <li>Project-specific requirements</li>
+            </ul>
 
-  const sendButton = document.getElementById("send");
+            <a class="btn btn-secondary" href="#contact">
+              Request Project Information
+            </a>
+          </article>
 
-  const text = input.value.trim();
+        </div>
 
-  if(!text || sendButton.disabled) return;
+        <p class="notice">
+          Important: Prices and service descriptions marked as planned
+          are not an offer to purchase an active service. Trial access,
+          paid activation, and website unlocking must be implemented
+          and verified before customers can purchase them.
+        </p>
 
-  input.value = "";
+      </div>
+    </section>
 
-  addMessage(text, "user");
+    <!-- FAQ -->
 
-  const typing = addMessage("Thinking…", "bot", "typing");
+    <section id="faq">
+      <div class="container">
 
-  sendButton.disabled = true;
+        <div class="section-heading">
+          <span class="eyebrow">QUESTIONS & ANSWERS</span>
 
-  try{
+          <h2>Frequently asked questions</h2>
 
-    const response = await fetch(
-      WORKER_URL,
-      {
-        method: "POST",
+          <p>
+            Learn more about JP Digital AI and the services
+            being developed.
+          </p>
+        </div>
 
-        headers: {
-          "Content-Type": "application/json"
-        },
+        <div class="faq">
 
-        body: JSON.stringify({
-          message: text,
-          history: history.slice(-12)
-        })
-      }
-    );
+          <details>
+            <summary>What is JP Digital AI?</summary>
 
-    const data = await response.json();
+            <p>
+              JP Digital AI is a digital business initiative focused
+              on website design, AI-powered customer support, and
+              practical tools for businesses.
+            </p>
+          </details>
 
-    if(!response.ok || !data.reply){
+          <details>
+            <summary>Can I use the AI assistant?</summary>
 
-      throw new Error(
-        data.message ||
-        data.error ||
-        "Request failed"
-      );
+            <p>
+              You can open the JP AI chat on this website and send
+              a message. The assistant depends on the availability
+              of its connected AI service.
+            </p>
+          </details>
 
+          <details>
+            <summary>Is the Business Scanner available?</summary>
+
+            <p>
+              The Business Scanner is planned as a free tool. Its
+              website-analysis functionality still needs to be
+              implemented and tested before it can be offered.
+            </p>
+          </details>
+
+          <details>
+            <summary>How much does website design cost?</summary>
+
+            <p>
+              Website design prices depend on the project,
+              required features, and scope. Contact us to discuss
+              your requirements.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can businesses outside Nigeria use your services?</summary>
+
+            <p>
+              JP Digital AI aims to serve businesses internationally.
+              Service availability, payment options, and support
+              arrangements will depend on the specific service.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-box">
+
+          <span class="eyebrow">LET'S BUILD SOMETHING BETTER</span>
+
+          <h2>Have a business idea?</h2>
+
+          <p>
+            Whether you need a website, want to explore AI solutions,
+            or have a question about JP Digital AI, let's talk.
+          </p>
+
+          <div class="actions">
+
+            <a
+              class="btn btn-primary"
+              href="mailto:jpdigitalai@gmail.com?subject=JP%20Digital%20AI%20Inquiry"
+            >
+              Email Our Team
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/2349030123407"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp Us
+            </a>
+
+            <button
+              class="btn btn-secondary"
+              type="button"
+              onclick="openChat()"
+            >
+              Talk to JP AI
+            </button>
+
+          </div>
+
+          <p class="email">
+            Email:
+            <a href="mailto:jpdigitalai@gmail.com">
+              jpdigitalai@gmail.com
+            </a>
+          </p>
+
+          <p>
+            Website designer and developer based in Delta State, Nigeria.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <div>
+          <strong style="color:white">JP Digital AI</strong>
+
+          <p>
+            © <span id="year"></span> JP Digital AI.
+            All rights reserved.
+          </p>
+
+          <p>
+            Delta State, Nigeria.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#tools">Tools</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+          <a href="mailto:jpdigitalai@gmail.com?subject=Privacy%20Policy%20Request">
+            Privacy enquiries
+          </a>
+        </div>
+
+      </div>
+
+      <p>
+        Service availability and features may change as the platform
+        is developed. Please contact us for current service information.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- CHAT BUTTON -->
+
+  <button
+    class="floating"
+    id="chatBtn"
+    type="button"
+    onclick="openChat()"
+    aria-controls="chat"
+    aria-expanded="false"
+  >
+    ✦ Ask JP AI
+  </button>
+
+  <!-- AI RECEPTIONIST -->
+
+  <div
+    id="chat"
+    role="dialog"
+    aria-label="JP AI Receptionist"
+    aria-modal="false"
+  >
+
+    <div class="chathead">
+
+      <div>
+        <div class="chatname">JP AI Receptionist</div>
+
+        <div class="chatstatus">
+          Ask a question about JP Digital AI
+        </div>
+      </div>
+
+      <button
+        class="close"
+        type="button"
+        onclick="closeChat()"
+        aria-label="Close chat"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div id="messages" aria-live="polite" aria-relevant="additions">
+
+      <div class="msg bot">
+        Hi! 👋 I'm JP AI Receptionist. Ask me about JP Digital AI,
+        website services, or the tools we're developing.
+      </div>
+
+    </div>
+
+    <div class="chatinput">
+
+      <textarea
+        id="input"
+        aria-label="Your message"
+        placeholder="Type your message..."
+        rows="1"
+      ></textarea>
+
+      <button
+        id="send"
+        type="button"
+        onclick="sendMessage()"
+        aria-label="Send message"
+      >
+        ➤
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+    /*
+      EXISTING CLOUDFLARE AI WORKER.
+      This is the same endpoint used by your original homepage.
+      Do not change it until a replacement has been tested.
+    */
+
+    const WORKER_URL =
+      "https://jpaireceptionist.emmanueleboh219.workers.dev/";
+
+    /*
+      Basic in-memory conversation history.
+      Messages are not saved across page reloads.
+    */
+
+    const history = [];
+
+    const chat = document.getElementById("chat");
+    const chatButton = document.getElementById("chatBtn");
+    const input = document.getElementById("input");
+    const sendButton = document.getElementById("send");
+    const messages = document.getElementById("messages");
+
+    function openChat() {
+      chat.style.display = "flex";
+      chatButton.style.display = "none";
+      chatButton.setAttribute("aria-expanded", "true");
+
+      setTimeout(function () {
+        input.focus();
+      }, 100);
     }
 
-    typing.remove();
+    function closeChat() {
+      chat.style.display = "none";
+      chatButton.style.display = "block";
+      chatButton.setAttribute("aria-expanded", "false");
+    }
 
-    addMessage(data.reply, "bot");
+    function askAbout(question) {
+      openChat();
 
-    history.push(
-      {
-        role: "user",
-        content: text
-      },
-      {
-        role: "assistant",
-        content: data.reply
+      input.value = question;
+
+      setTimeout(function () {
+        sendMessage();
+      }, 150);
+    }
+
+    function addMessage(text, type, extra = "") {
+      const div = document.createElement("div");
+
+      div.className = "msg " + type + " " + extra;
+
+      /*
+        textContent prevents AI responses from being interpreted
+        as executable HTML.
+      */
+
+      div.textContent = text;
+
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+
+      return div;
+    }
+
+    async function sendMessage() {
+      const text = input.value.trim();
+
+      if (!text || sendButton.disabled) {
+        return;
       }
-    );
 
-  }catch(error){
+      input.value = "";
 
-    typing.remove();
+      addMessage(text, "user");
 
-    addMessage(
-      "Sorry, I couldn't connect right now. Please contact Emmanuel on WhatsApp or email.",
-      "bot"
-    );
+      const typing = addMessage("Thinking…", "bot", "typing");
 
-    console.error("Chat error:", error);
+      sendButton.disabled = true;
 
-  }finally{
+      try {
+        const controller = new AbortController();
 
-    sendButton.disabled = false;
+        const timeout = setTimeout(function () {
+          controller.abort();
+        }, 45000);
 
-    input.focus();
+        let response;
 
-  }
+        try {
+          response = await fetch(WORKER_URL, {
+            method: "POST",
 
-}
+            headers: {
+              "Content-Type": "application/json"
+            },
 
-/* ENTER TO SEND */
+            body: JSON.stringify({
+              message: text,
+              history: history.slice(-12)
+            }),
 
-document
-.getElementById("input")
-.addEventListener("keydown", function(e){
+            signal: controller.signal
+          });
+        } finally {
+          clearTimeout(timeout);
+        }
 
-  if(e.key === "Enter" && !e.shiftKey){
+        let data;
 
-    e.preventDefault();
+        try {
+          data = await response.json();
+        } catch {
+          throw new Error("The AI service returned an invalid response.");
+        }
 
-    sendMessage();
+        if (!response.ok || !data.reply) {
+          throw new Error(
+            data.message ||
+            data.error ||
+            "The AI service could not answer."
+          );
+        }
 
-  }
+        typing.remove();
 
-});
+        addMessage(String(data.reply), "bot");
 
-/* CURRENT YEAR */
+        history.push(
+          {
+            role: "user",
+            content: text
+          },
+          {
+            role: "assistant",
+            content: String(data.reply)
+          }
+        );
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
+        /*
+          Limit the browser's conversation history.
+        */
 
-</script>
+        if (history.length > 24) {
+          history.splice(0, history.length - 24);
+        }
+
+      } catch (error) {
+        typing.remove();
+
+        addMessage(
+          "Sorry, I couldn't connect to the AI service. Please try again or contact us by WhatsApp or email.",
+          "bot"
+        );
+
+        console.error("JP AI chat error:", error);
+
+      } finally {
+        sendButton.disabled = false;
+        input.focus();
+      }
+    }
+
+    input.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Enter" &&
+        !event.shiftKey &&
+        !event.isComposing
+      ) {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
   </html>

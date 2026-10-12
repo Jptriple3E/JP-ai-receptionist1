@@ -1,9 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="JP Digital AI — modern website design and development by Emmanuel Eboh.">
+
+<meta name="description" content="JP Digital AI by Emmanuel Eboh. Modern website design, development, and AI-powered business solutions.">
+
+<meta name="google-adsense-account" content="ca-pub-6655109120413498">
+
 <title>JP Digital AI | Website Design & Development</title>
 
 <style>
@@ -98,6 +103,7 @@ h1{
 }
 
 .btn{
+  display:inline-block;
   padding:13px 20px;
   border-radius:12px;
   font-weight:700;
@@ -224,6 +230,7 @@ footer{
   border-radius:15px;
   margin:8px 0;
   white-space:pre-wrap;
+  overflow-wrap:anywhere;
   font-size:14px
 }
 
@@ -272,6 +279,11 @@ textarea{
   cursor:pointer
 }
 
+#send:disabled{
+  opacity:.5;
+  cursor:wait
+}
+
 .floating{
   position:fixed;
   right:18px;
@@ -305,10 +317,17 @@ textarea{
   }
 
   #chat{
-    height:72vh
+    height:72vh;
+    height:72dvh;
+    max-height:650px
+  }
+
+  h1{
+    letter-spacing:-2px
   }
 }
 </style>
+
 </head>
 
 <body>
@@ -324,17 +343,14 @@ JP Digital AI <span>/ Studio</span>
 
 <div class="links">
 
-<a href="#work">
-What I Do
-</a>
+<a href="#work">What I Do</a>
 
-<a href="#contact">
-Contact
-</a>
+<a href="#contact">Contact</a>
 
 <a
 href="https://saas-web-portfolio-1r1h.vercel.app/#contact"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 Portfolio
 </a>
 
@@ -344,7 +360,6 @@ Portfolio
 
 </div>
 </header>
-
 
 <main>
 
@@ -361,7 +376,7 @@ Modern websites built to make your business look exceptional.
 </h1>
 
 <p>
-I’m Emmanuel Eboh, a website designer and developer based in Delta State, Nigeria. I build modern SaaS-style business websites designed to look professional and help businesses grow online.
+I'm Emmanuel Eboh, a website designer and developer based in Delta State, Nigeria. I build modern SaaS-style business websites designed to look professional and help businesses grow online.
 </p>
 
 <div class="buttons">
@@ -375,7 +390,8 @@ Ask JP AI
 <a
 class="btn secondary"
 href="https://wa.me/2349030123407"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 WhatsApp Me
 </a>
 
@@ -385,27 +401,23 @@ WhatsApp Me
 
 </section>
 
-
 <section id="work">
 
 <div class="wrap">
 
 <h2 class="title">
-What I do
+What I Do
 </h2>
 
 <p class="sub">
 A clean, modern website experience for businesses that want a stronger online presence.
 </p>
 
-
 <div class="cards">
 
 <div class="card">
 
-<h3>
-Modern Websites
-</h3>
+<h3>Modern Websites</h3>
 
 <p>
 Professional business websites with a clean, modern look and clear user experience.
@@ -413,12 +425,9 @@ Professional business websites with a clean, modern look and clear user experien
 
 </div>
 
-
 <div class="card">
 
-<h3>
-SaaS-Style Design
-</h3>
+<h3>SaaS-Style Design</h3>
 
 <p>
 Modern layouts inspired by high-quality SaaS products, built around your business.
@@ -426,15 +435,12 @@ Modern layouts inspired by high-quality SaaS products, built around your busines
 
 </div>
 
-
 <div class="card">
 
-<h3>
-AI-Ready
-</h3>
+<h3>AI-Ready Solutions</h3>
 
 <p>
-Web experiences can be connected to useful AI tools and assistants.
+Web experiences that can be connected to useful AI tools and intelligent assistants.
 </p>
 
 </div>
@@ -445,7 +451,6 @@ Web experiences can be connected to useful AI tools and assistants.
 
 </section>
 
-
 <section id="contact">
 
 <div class="wrap">
@@ -453,7 +458,7 @@ Web experiences can be connected to useful AI tools and assistants.
 <div class="contact">
 
 <h2 class="title">
-Have a website idea?
+Have a Website Idea?
 </h2>
 
 <p class="sub">
@@ -471,7 +476,8 @@ Email Emmanuel
 <a
 class="btn secondary"
 href="https://wa.me/2349030123407"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 WhatsApp
 </a>
 
@@ -485,14 +491,12 @@ WhatsApp
 
 </main>
 
-
 <footer>
 
 © <span id="year"></span>
 JP Digital AI · Delta State, Nigeria
 
 </footer>
-
 
 <button
 class="floating"
@@ -502,7 +506,6 @@ onclick="openChat()">
 ✦ Ask JP AI
 
 </button>
-
 
 <!-- AI CHAT -->
 
@@ -524,36 +527,33 @@ Online · Emmanuel's assistant
 
 <button
 class="close"
-onclick="closeChat()">
+onclick="closeChat()"
+aria-label="Close chat">
 
 ×
-
 </button>
 
 </div>
 
-
-<div id="messages">
+<div id="messages" aria-live="polite">
 
 <div class="msg bot">
-
-Hi! 👋 I’m JP AI Receptionist. Ask me anything about Emmanuel or his website services. You can also just say hello.
-
+Hi! 👋 I'm JP AI Receptionist. Ask me anything about Emmanuel or his website services. You can also just say hello.
 </div>
 
 </div>
-
 
 <div class="chatinput">
 
 <textarea
 id="input"
-placeholder="Type your message...">
-</textarea>
+aria-label="Your message"
+placeholder="Type your message..."></textarea>
 
 <button
 id="send"
-onclick="sendMessage()">
+onclick="sendMessage()"
+aria-label="Send message">
 
 ➤
 
@@ -563,7 +563,6 @@ onclick="sendMessage()">
 
 </div>
 
-
 <script>
 
 /* YOUR CLOUDFLARE AI WORKER */
@@ -571,135 +570,93 @@ onclick="sendMessage()">
 const WORKER_URL =
 "https://jpaireceptionist.emmanueleboh219.workers.dev/";
 
-
 /* CHAT MEMORY */
 
 const history = [];
-
 
 /* OPEN CHAT */
 
 function openChat(){
 
-  document.getElementById("chat").style.display="flex";
+  document.getElementById("chat").style.display = "flex";
 
-  document.getElementById("chatBtn").style.display="none";
+  document.getElementById("chatBtn").style.display = "none";
 
   document.getElementById("input").focus();
 
 }
 
-
 /* CLOSE CHAT */
 
 function closeChat(){
 
-  document.getElementById("chat").style.display="none";
+  document.getElementById("chat").style.display = "none";
 
-  document.getElementById("chatBtn").style.display="block";
+  document.getElementById("chatBtn").style.display = "block";
 
 }
 
-
 /* ADD MESSAGE */
 
-function addMessage(text,type,extra=""){
+function addMessage(text, type, extra = ""){
 
-  const box =
-  document.getElementById("messages");
+  const box = document.getElementById("messages");
 
-  const div =
-  document.createElement("div");
+  const div = document.createElement("div");
 
-  div.className =
-  "msg "+type+" "+extra;
+  div.className = "msg " + type + " " + extra;
 
   div.textContent = text;
 
   box.appendChild(div);
 
-  box.scrollTop =
-  box.scrollHeight;
+  box.scrollTop = box.scrollHeight;
 
   return div;
 
 }
 
-
 /* SEND MESSAGE TO CLOUDFLARE */
 
 async function sendMessage(){
 
-  const input =
-  document.getElementById("input");
+  const input = document.getElementById("input");
 
-  const text =
-  input.value.trim();
+  const sendButton = document.getElementById("send");
 
-  if(!text) return;
+  const text = input.value.trim();
 
+  if(!text || sendButton.disabled) return;
 
-  input.value="";
+  input.value = "";
 
+  addMessage(text, "user");
 
-  /* SHOW USER MESSAGE */
+  const typing = addMessage("Thinking…", "bot", "typing");
 
-  addMessage(
-    text,
-    "user"
-  );
-
-
-  /* SHOW THINKING */
-
-  const typing =
-  addMessage(
-    "Thinking…",
-    "bot",
-    "typing"
-  );
-
-
-  document.getElementById("send").disabled=true;
-
+  sendButton.disabled = true;
 
   try{
 
-    const response =
-    await fetch(
+    const response = await fetch(
       WORKER_URL,
       {
-        method:"POST",
+        method: "POST",
 
-        headers:{
-          "Content-Type":
-          "application/json"
+        headers: {
+          "Content-Type": "application/json"
         },
 
-        body:JSON.stringify({
-
-          message:text,
-
-          history:
-          history.slice(-12)
-
+        body: JSON.stringify({
+          message: text,
+          history: history.slice(-12)
         })
-
       }
     );
 
+    const data = await response.json();
 
-    const data =
-    await response.json();
-
-
-    typing.remove();
-
-
-    if(
-      !response.ok ||
-      !data.reply
-    ){
+    if(!response.ok || !data.reply){
 
       throw new Error(
         data.message ||
@@ -709,46 +666,35 @@ async function sendMessage(){
 
     }
 
+    typing.remove();
 
-    /* SHOW AI RESPONSE */
-
-    addMessage(
-      data.reply,
-      "bot"
-    );
-
-
-    /* SAVE CHAT HISTORY */
+    addMessage(data.reply, "bot");
 
     history.push(
       {
-        role:"user",
-        content:text
+        role: "user",
+        content: text
       },
-
       {
-        role:"assistant",
-        content:data.reply
+        role: "assistant",
+        content: data.reply
       }
     );
-
 
   }catch(error){
 
     typing.remove();
-
 
     addMessage(
       "Sorry, I couldn't connect right now. Please contact Emmanuel on WhatsApp or email.",
       "bot"
     );
 
-
-    console.error(error);
+    console.error("Chat error:", error);
 
   }finally{
 
-    document.getElementById("send").disabled=false;
+    sendButton.disabled = false;
 
     input.focus();
 
@@ -756,35 +702,25 @@ async function sendMessage(){
 
 }
 
-
 /* ENTER TO SEND */
 
 document
 .getElementById("input")
-.addEventListener(
-  "keydown",
-  function(e){
+.addEventListener("keydown", function(e){
 
-    if(
-      e.key==="Enter" &&
-      !e.shiftKey
-    ){
+  if(e.key === "Enter" && !e.shiftKey){
 
-      e.preventDefault();
+    e.preventDefault();
 
-      sendMessage();
-
-    }
+    sendMessage();
 
   }
-);
 
+});
 
 /* CURRENT YEAR */
 
-document
-.getElementById("year")
-.textContent =
+document.getElementById("year").textContent =
 new Date().getFullYear();
 
 </script>
